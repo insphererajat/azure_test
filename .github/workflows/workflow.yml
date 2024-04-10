@@ -1,0 +1,12 @@
+image: amazonlinux:1
+ 
+pipelines:
+    custom:
+       push-to-master:
+            - step:
+                name: Push code to Web-Servers
+                script:
+                    - export BITBUCKET_BRANCH_CHECK=master
+                    - bash .github/workflows/check
+                    - bash .github/workflows/prerequisite
+                    - bash .github/workflows/codedeploy
