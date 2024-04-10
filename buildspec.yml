@@ -4,7 +4,7 @@ phases:
   build:
     commands:
       - zip -r code.zip .
-      - aws s3 cp code.zip s3://hpsls-codedeploy/
+      - aws s3 cp code.zip s3://react-codedeploy/
 
 artifacts:
   files: code.zip
